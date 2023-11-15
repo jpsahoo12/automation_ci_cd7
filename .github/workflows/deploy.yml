@@ -19,7 +19,7 @@ jobs:
 
       # - uses: sede-x/SCMA-Reports/.github/actions/powerbi-publish@main
       #   with:
-      #     workspace-name: 'PW-DS-SEAM_SCMA'
+      #     workspace-name: 'PW-GF-power bi ci cd testing'
       #     report-path: "${{GITHUB.WORKSPACE}}\\reports"
       #     client-id: ${{ secrets.CLIENTID }}
       #     client-secret: ${{ secrets.CLIENTSECRET }}
@@ -27,12 +27,12 @@ jobs:
 
       - name: Publish Reports
         run: |
-          ${{ GITHUB.WORKSPACE }}\.github\actions\powerbi-publish\run-task.ps1 -ClientId ${{ secrets.CLIENTID }} -Secret ${{ secrets.CLIENTSECRET }} -TenantId ${{ secrets.TENANTID }} -FilePattern "${{GITHUB.WORKSPACE}}\\reports" -WorkspaceName  PW-DS-SEAM_SCMA -Action 'Publish' -Create $true -Overwrite $true
+          ${{ GITHUB.WORKSPACE }}\.github\actions\powerbi-publish\run-task.ps1 -ClientId ${{ secrets.CLIENTID }} -Secret ${{ secrets.CLIENTSECRET }} -TenantId ${{ secrets.TENANTID }} -FilePattern "${{GITHUB.WORKSPACE}}\\reports" -WorkspaceName  "PW-GF-power bi ci cd testing" -Action 'Publish' -Create $true -Overwrite $true
         shell: powershell
 
       - name: Update Datasources
         run: |
-          ${{ GITHUB.WORKSPACE }}\.github\actions\powerbi-publish\run-task.ps1 -ClientId ${{ secrets.CLIENTID }} -Secret ${{ secrets.CLIENTSECRET }} -TenantId ${{ secrets.TENANTID }} -FilePattern "${{GITHUB.WORKSPACE}}\\reports" -WorkspaceName  PW-DS-SEAM_SCMA -Action 'UpdateDatasourceViaGateway' -Dataset 'ECR_CICD' -NewServer '${{ secrets.DB_SERVER }}' -NewDatabase '${{ secrets.DB_NAME }}' -DataSourceUsername '${{ secrets.DB_USER }}' -DataSourcePassword '${{ secrets.DB_PASSWORD }}'
+          ${{ GITHUB.WORKSPACE }}\.github\actions\powerbi-publish\run-task.ps1 -ClientId ${{ secrets.CLIENTID }} -Secret ${{ secrets.CLIENTSECRET }} -TenantId ${{ secrets.TENANTID }} -FilePattern "${{GITHUB.WORKSPACE}}\\reports" -WorkspaceName  "PW-GF-power bi ci cd testing" -Action 'UpdateDatasourceViaGateway' -Dataset 'ECR_CICD' -NewServer '${{ secrets.DB_SERVER }}' -NewDatabase '${{ secrets.DB_NAME }}' -DataSourceUsername '${{ secrets.DB_USER }}' -DataSourcePassword '${{ secrets.DB_PASSWORD }}'
         shell: powershell
 
       - name: list contents
@@ -69,7 +69,7 @@ jobs:
 
       # - uses: sede-x/SCMA-Reports/.github/actions/powerbi-publish@main
       #   with:
-      #     workspace-name: 'PW-DS-SEAM_SCMA'
+      #     workspace-name: 'PW-GF-power bi ci cd testing'
       #     report-path: "${{GITHUB.WORKSPACE}}\\reports"
       #     client-id: ${{ secrets.CLIENTID }}
       #     client-secret: ${{ secrets.CLIENTSECRET }}
@@ -77,17 +77,17 @@ jobs:
 
       - name: Publish Reports
         run: |
-          ${{ GITHUB.WORKSPACE }}\.github\actions\powerbi-publish\run-task.ps1 -ClientId ${{ secrets.CLIENTID }} -Secret ${{ secrets.CLIENTSECRET }} -TenantId ${{ secrets.TENANTID }} -FilePattern "${{GITHUB.WORKSPACE}}\\reports" -WorkspaceName  PW-DS-SEAM_SCMA -Action 'Publish' -Create $true -Overwrite $true
+          ${{ GITHUB.WORKSPACE }}\.github\actions\powerbi-publish\run-task.ps1 -ClientId ${{ secrets.CLIENTID }} -Secret ${{ secrets.CLIENTSECRET }} -TenantId ${{ secrets.TENANTID }} -FilePattern "${{GITHUB.WORKSPACE}}\\reports" -WorkspaceName  "PW-GF-power bi ci cd testing" -Action 'Publish' -Create $true -Overwrite $true
         shell: powershell
 
       - name: Update Datasources
         run: |
-          ${{ GITHUB.WORKSPACE }}\.github\actions\powerbi-publish\run-task.ps1 -ClientId ${{ secrets.CLIENTID }} -Secret ${{ secrets.CLIENTSECRET }} -TenantId ${{ secrets.TENANTID }} -FilePattern "${{GITHUB.WORKSPACE}}\\reports" -WorkspaceName  PW-DS-SEAM_SCMA -Action 'UpdateDatasourceViaGateway' -Dataset 'ECR_PROD' -NewServer '${{ secrets.DB_SERVER }}' -NewDatabase '${{ secrets.DB_NAME }}' -DataSourceUsername '${{ secrets.DB_USER }}' -DataSourcePassword '${{ secrets.DB_PASSWORD }}'
+          ${{ GITHUB.WORKSPACE }}\.github\actions\powerbi-publish\run-task.ps1 -ClientId ${{ secrets.CLIENTID }} -Secret ${{ secrets.CLIENTSECRET }} -TenantId ${{ secrets.TENANTID }} -FilePattern "${{GITHUB.WORKSPACE}}\\reports" -WorkspaceName  "PW-GF-power bi ci cd testing" -Action 'UpdateDatasourceViaGateway' -Dataset 'ECR_PROD' -NewServer '${{ secrets.DB_SERVER }}' -NewDatabase '${{ secrets.DB_NAME }}' -DataSourceUsername '${{ secrets.DB_USER }}' -DataSourcePassword '${{ secrets.DB_PASSWORD }}'
         shell: powershell
 
       - name: Update Datasources
         run: |
-          ${{ GITHUB.WORKSPACE }}\.github\actions\powerbi-publish\run-task.ps1 -ClientId ${{ secrets.CLIENTID }} -Secret ${{ secrets.CLIENTSECRET }} -TenantId ${{ secrets.TENANTID }} -FilePattern "${{GITHUB.WORKSPACE}}\\reports" -WorkspaceName  PW-DS-SEAM_SCMA -Action 'UpdateDatasourceViaGateway' -Dataset 'CAISO_PROD' -NewServer '${{ secrets.DB_SERVER }}' -NewDatabase '${{ secrets.DB_NAME }}' -DataSourceUsername '${{ secrets.DB_USER }}' -DataSourcePassword '${{ secrets.DB_PASSWORD }}'
+          ${{ GITHUB.WORKSPACE }}\.github\actions\powerbi-publish\run-task.ps1 -ClientId ${{ secrets.CLIENTID }} -Secret ${{ secrets.CLIENTSECRET }} -TenantId ${{ secrets.TENANTID }} -FilePattern "${{GITHUB.WORKSPACE}}\\reports" -WorkspaceName  "PW-GF-power bi ci cd testing" -Action 'UpdateDatasourceViaGateway' -Dataset 'CAISO_PROD' -NewServer '${{ secrets.DB_SERVER }}' -NewDatabase '${{ secrets.DB_NAME }}' -DataSourceUsername '${{ secrets.DB_USER }}' -DataSourcePassword '${{ secrets.DB_PASSWORD }}'
         shell: powershell
 
       - name: list contents
